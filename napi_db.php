@@ -12,10 +12,10 @@ date_default_timezone_set('Asia/Taipei');
 /*end define area*/
 class ndb{		
 	public function __construct(){	   
-		$hostname_db = "mysql.event.topwin.com.tw";
-		$database_db = "event_topwin_v3";
-		$username_db = "topwincomtw";
-		$password_db = "12958652";
+		$hostname_db = "localhost";
+		$database_db = "db name";
+		$username_db = "db user";
+		$password_db = "db pwd";
 		$db = mysql_pconnect($hostname_db, $username_db, $password_db) or trigger_error(mysql_error(),E_USER_ERROR); 
 		mysql_query("set names 'utf8'");
 		mysql_select_db($database_db);
