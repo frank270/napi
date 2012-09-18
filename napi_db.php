@@ -11,15 +11,29 @@ define('LOG_DIR',CURRENT_DIR . LOG_DIR_NAME);
 date_default_timezone_set('Asia/Taipei');
 /*end define area*/
 class ndb{		
+    public $hostname_db = "localhost";
+    public $database_db = "db name";
+    public $username_db = "db user";
+    public $password_db = "db pwd";
 	public function __construct(){	   
-		$hostname_db = "localhost";
-		$database_db = "db name";
-		$username_db = "db user";
-		$password_db = "db pwd";
-		$db = mysql_pconnect($hostname_db, $username_db, $password_db) or trigger_error(mysql_error(),E_USER_ERROR); 
-		mysql_query("set names 'utf8'");
-		mysql_select_db($database_db);
+		if($this->connect()){
+            return true;
+        } 
+        else {
+            return false;
+        }
 	}
+
+    /*
+
+    */
+    public function connect()
+    {
+        $db = mysql_pconnect($this->hostname_db, $this->username_db, $this->password_db) or trigger_error(mysql_error(),E_USER_ERROR); 
+        mysql_query("set names 'utf8'");
+        mysql_select_db($database_db);
+        return $db;
+    }
 
 	public function select($sql=NULL,$sort=NULL,$term=NULL,$start_row=NULL,$per_rows=NULL,$debug=false){
 	   #取回資料用
