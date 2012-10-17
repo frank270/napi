@@ -1,7 +1,7 @@
 <?php
 /**
  * @author N.Wang
- * @copyright 2012-03-20
+ * @copyright 2012-10-17
  * @version lite
  */
 /*define area*/
