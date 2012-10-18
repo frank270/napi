@@ -13,10 +13,10 @@ session_start();
 /*end define area*/
 class ndb_ms{       
     public $conn;
-    private $serverName= "203.69.85.18"; 
-    private $database = "rewards";
-    private $uid = "giotto";
-    private $pwd = "barry@1216";
+    private $serverName= "host"; 
+    private $database = "db";
+    private $uid = "uid";
+    private $pwd = "pwd";
     
     function set_db($val=NULL){
           $this->database = $val;
