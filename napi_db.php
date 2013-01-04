@@ -31,7 +31,7 @@ class ndb{
     {
         $db = mysql_pconnect($this->hostname_db, $this->username_db, $this->password_db) or trigger_error(mysql_error(),E_USER_ERROR); 
         mysql_query("set names 'utf8'");
-        mysql_select_db($database_db);
+        mysql_select_db($this->database_db);
         return $db;
     }
 
